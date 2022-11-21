@@ -1,0 +1,45 @@
+<section>
+  <div style="display: flex;
+  justify-content: center;
+  align-items: center;">
+    <input
+      type="text"
+      id="searchBox"
+      placeholder="Buscar..."
+      style="width: 50%;"
+    />
+  </div>
+</section>
+
+<script>
+  const searchBox = document.querySelector("#searchBox");
+  searchBox.addEventListener("keyup", () => {
+    let input, filter, section, div, h2, i;
+    input = document.getElementById("searchBox");
+    filter = input.value.toUpperCase();
+    section = document.getElementById("posts");
+    div = section.getElementsByClassName("card");
+
+    for (i = 0; i < div.length; i++) {
+      h2 = div[i].getElementsByTagName("h2")[0];
+      if (h2) {
+        var palabrasEnFiltro = filter.split(" ");
+        var hallado = 0;
+        for (var filtro of palabrasEnFiltro) {
+          if (h2.innerHTML.toUpperCase().indexOf(filtro) > -1) {
+            hallado++;
+          } 
+        }
+
+        if (hallado === palabrasEnFiltro.length) {
+          div[i].style.display = "";
+        } else {
+          div[i].style.display = "none";
+        }
+      } else {
+        console.log("no hay titulos");
+      }
+    }
+  });
+
+</script>

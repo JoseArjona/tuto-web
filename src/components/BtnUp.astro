@@ -1,0 +1,60 @@
+<button class="back-to-top hidden">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="back-to-top-icon"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm.53 5.47a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.72-1.72v5.69a.75.75 0 001.5 0v-5.69l1.72 1.72a.75.75 0 101.06-1.06l-3-3z"
+      clip-rule="evenodd"></path>
+  </svg>
+</button>
+<script>
+  const showOnPx = 100;
+  const backToTopButton = document.querySelector(".back-to-top");
+
+  const scrollContainer = () => {
+    return document.documentElement || document.body;
+  };
+
+  document.addEventListener("scroll", () => {
+    if (scrollContainer().scrollTop > showOnPx) {
+      backToTopButton.classList.remove("hidden");
+    } else {
+      backToTopButton.classList.add("hidden");
+    }
+  });
+
+  const goToTop = () => {
+    document.body.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  backToTopButton.addEventListener("click", goToTop);
+</script>
+<style>
+  .back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 100%;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    opacity: 100%;
+    transition: opacity 0.5s;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .back-to-top-icon {
+    width: 3rem;
+    height: 3rem;
+    fill: #6f6c6c;
+  }
+  .hidden {
+    opacity: 0%;
+  }
+</style>

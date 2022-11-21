@@ -1,0 +1,102 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+import BtnUp from "../components/BtnUp.astro";
+import SearchInput from "../components/SearchInput.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      h1 {
+        margin: 10px;
+      }
+      ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <BtnUp />
+    <main>
+      <section>
+        <h1>Blog</h1>
+        <div>
+          <SearchInput />
+        </div>
+        <div class="grid" id="posts">
+          {
+            posts.map((post) => (
+              <div class="col-span-1">
+                <Card
+                  link={post.url}
+                  title={post.frontmatter.title}
+                  date={new Date(post.frontmatter.pubDate).toLocaleDateString(
+                    "es-mx",
+                    {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    }
+                  )}
+                  heroImage={post.frontmatter.heroImage}
+                  heroImageAlt={post.frontmatter.heroImageAlt}
+                />
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+    <Footer />
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin: 10px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </body>
+</html>

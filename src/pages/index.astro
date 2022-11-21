@@ -1,0 +1,65 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <div>
+        <h1>Bienvenido! 🚀</h1>
+        <br />
+        <p>
+          Bienvenidos a JCEKM_TUTO, una web de JCEKM! 
+          Tutoriales y guias sobre el mundo de la tecnologia.
+        </p>
+        <a class="primary" href="/blog">Post</a>
+      </div>
+      <div>
+        <picture class="promo-art">
+          <img
+            src="https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=600"
+            width="500"
+            height="500"
+          />
+        </picture>
+      </div>
+    </main>
+    <Footer />
+    <style>
+      main {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+      }
+      main p {
+        font-size: var(--font-size-4);
+        margin-block-end: var(--size-3);
+        padding-right: 10px;
+      }
+      a {
+        background: white;
+        color: var(--indigo-8);
+        font-size: var(--font-size-3);
+        padding-inline: var(--size-8);
+        padding-block: var(--size-3);
+        border-radius: var(--radius-2);
+        box-shadow: var(--shadow-2);
+		text-decoration: none;
+      }
+
+      a.primary {
+        background: var(--blue-8);
+        text-shadow: 0 1px 0 var(--blue-9);
+        color: white;
+      }
+    </style>
+  </body>
+</html>

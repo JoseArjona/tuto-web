@@ -1,0 +1,31 @@
+<div id="progress-bar"></div>
+
+<script>
+  let processScroll = () => {
+    let docElem = document.documentElement,
+      docBody = document.body,
+      scrollTop = docElem["scrollTop"] || docBody["scrollTop"],
+      scrollBottom =
+        (docElem["scrollHeight"] || docBody["scrollHeight"]) -
+        window.innerHeight,
+      scrollPercent = (scrollTop / scrollBottom) * 100 + "%";
+    document
+      .getElementById("progress-bar")
+      .style.setProperty("--scrollAmount", scrollPercent);
+  };
+
+  document.addEventListener("scroll", processScroll);
+</script>
+
+<style>
+  #progress-bar {
+    --scrollAmount: 0%;
+
+    background-image: linear-gradient(120deg, #84b1fa 0%, #8fd3f4 100%);
+    width: var(--scrollAmount);
+    height: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+</style>
