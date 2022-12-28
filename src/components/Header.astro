@@ -1,63 +1,38 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../config";
+import ToggleTheme from "./ToggleTheme.astro";
 ---
 
 <header>
-  <nav>
-    <div class="logo">
-      <h2 class="gradient-text">
-        {SITE_TITLE}
-      </h2>
-    </div>
-    <div class="navbar">
-      <ul>
-        <li>
-          <HeaderLink href="/">Inicio</HeaderLink>
-        </li>
-        <li>
-          <HeaderLink href="/blog">Post</HeaderLink>
-        </li>
-        <!-- <li>
-          <HeaderLink href="/search">
-            <svg height="32" viewBox="0 0 25 25" width="32" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 3c1.7949254 0 3.25 1.45507456 3.25 3.25v11.5c0 1.7949254-1.4550746 3.25-3.25 3.25h-11.5c-1.79492544 0-3.25-1.4550746-3.25-3.25v-11.5c0-1.79492544 1.45507456-3.25 3.25-3.25zm-6.75 4c-2.209139 0-4 1.790861-4 4s1.790861 4 4 4c.7414004 0 1.4356896-.2017072 2.0309842-.5532383l2.261909 2.2603451.0942074.0831886c.3922912.3050249.9595222.2772953 1.3200062-.0831886.3905243-.3905243.3905243-1.0236893 0-1.4142136l-2.2603451-2.261909c.3515311-.5952946.5532383-1.2895838.5532383-2.0309842 0-2.209139-1.790861-4-4-4zm0 2c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z" fill="#fff"/></svg>
-
-          </HeaderLink>
-        </li> -->
-        <li>
-          <HeaderLink href="https://jcekm.vercel.app/About" target="_blank"
-            >Acerca de</HeaderLink
-          >
-        </li>
-      </ul>
+  <nav class="px-2 sm:px-4 py-2.5 rounded sticky">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+      <a href="/" class="flex items-center">
+        <span
+          class="xl:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-sky-600 to-blue-500 hidden md:block md:text-4xl"
+          >{SITE_TITLE}</span
+        >
+      </a>
+      <div>
+        <ul>
+          <li>
+            <HeaderLink href="/">Inicio</HeaderLink>
+          </li>
+          <li>
+            <HeaderLink href="/blog">Post</HeaderLink>
+          </li>
+          <li>
+            <HeaderLink href="https://jcekm.vercel.app/About" target="_blank"
+              >Acerca de</HeaderLink
+            >
+          </li>
+          <ToggleTheme />
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
 <style>
-  header {
-    margin: 0em 0 2em;
-  }
-  nav {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .navbar {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    height: 75px;
-  }
-  .gradient-text {
-    background: var(--gradient-7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  h2 {
-    margin: 0.5em 0;
-  }
-
   ul {
     list-style-type: none;
     display: flex;
@@ -102,25 +77,5 @@ import { SITE_TITLE } from "../config";
     font-weight: 600;
     letter-spacing: 1px;
     opacity: 0.9;
-  }
-  /* Tamaño Mediano - Tablets */
-  @media screen and (max-width: 992px) {
-    nav {
-      grid-template-columns: 1fr;
-    }
-    li a {
-      font-size: 16px;
-    }
-  }
-
-  /* Tamaño Pequeño - Celulares */
-  @media screen and (max-width: 576px) {
-    nav {
-      grid-template-columns: 1fr;
-    }
-    li a {
-      font-size: 14px;
-      padding: 10px 25px;
-    }
   }
 </style>

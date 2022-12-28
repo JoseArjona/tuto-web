@@ -10,6 +10,7 @@ heroImageAlt: "GitHub logo"
 ## Subir un proyecto a GitHub
 
 <br/>
+
 Seleccionamos la carpeta donde tenemos el proyecto. Damos clic derecho y abrimos en una terminal.
 
 > Nota: en la terminal debes fijarte que estas en la dirección correcta de tu proyecto.
