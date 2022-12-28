@@ -93,13 +93,13 @@
       // guardamos en el localStorage que el modo oscuro esta desactivado
       localStorage.setItem("dark", "false");
       // removemos las clases de modo oscuro
-      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
       document.body.classList.remove("bg-gray-900");
     } else {
       // si el checkbox esta activado guardamos en el localStorage que el modo oscuro esta activado
       localStorage.setItem("dark", "true");
       // agregamos las clases de modo oscuro
-      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
       document.body.classList.add("bg-gray-900");
     }
   });
@@ -108,7 +108,7 @@
     // si esta activado activamos el checkbox
     toggle.querySelector("input").checked = true;
     // agregamos las clases de modo oscuro
-    document.body.classList.add("dark");
+    document.documentElement.classList.add("dark");
     document.body.classList.add("bg-gray-900");
   }
 </script>
