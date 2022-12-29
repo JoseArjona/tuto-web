@@ -9,5 +9,5 @@ module.exports = {
 			mono: ['Red Hat Mono','Consolas', 'SFMono-Regular'],
 		},
 	},
-	plugins: [],
+	plugins: [ require('@tailwindcss/typography'),],
 }

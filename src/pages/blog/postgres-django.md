@@ -8,11 +8,9 @@ heroImageAlt: "Django and PostgreSQL logo"
 ---
 
 Django usa por defecto sqlite, pero generalmente esta solo se usa en la etapa de desarrollo. Para poder usar PostgreSQL debemos realizar lo siguiente:
-<br/>
 
 ## Instalar el modulo `psycopg2`
 
-<br/>
 Dentro de nuestro entorno virtual en python debemos ejecutar la siguiente linea de codigo:
 
 ```sh
@@ -20,43 +18,23 @@ Dentro de nuestro entorno virtual en python debemos ejecutar la siguiente linea 
 
 ```
 
-<br/>
-
 ## Crear un usuario en PostgreSQL
-
-<br/>
 
 Para crear un Usuario en PostgreSQL desde pgAdmin debemos:
 
-<br/>
-
 1.- Abrir pgAdmin y iniciar el servidor de PostgreSQL, para ello bastara con darle clic al nombre del servidor de PostgreSQL por defecto es `PostgreSQL` + `la version`.
-
-<br/>
 
 2.- Dentro ubicar `Login/Group Roles`, darle clic derecho y en `create` `Login/Group Role`.
 
-<br/>
-
 3.- En la ventana emergente escribir en la pestaña `general` el name (este sera el usuario) y en la pestaña `Definition` en el campo `password` escribir la constaseña despues en la pestaña `Privileges` activar los permisos que desea en este caso activaremos todos (asi sera un superusuario).
-
-<br/>
 
 ## Crear una base de datos en PostgreSQL
 
-<br/>
-
 Para crear una base de datos en PostgreSQL desde pgAdmin debemos darle clic derecho a `Database` dentro de nuestro servidor de PostgreSQL, despues create `database`.
-
-<br/>
 
 ## Configuración en Django
 
-<br/>
-
 Dentro del archivo `settings.py` buscaremos en la sección `DATABASES` pondremos lo siguiente:
-
-<br/>
 
 ```python
  DATABASES = {
@@ -71,19 +49,11 @@ Dentro del archivo `settings.py` buscaremos en la sección `DATABASES` pondremos
  }
 ```
 
-<br/>
-
 ### Comandos Finales
 
-<br/>
-
 Por ultimo dentro del proyecto ejecutaremos lo siguientes comandos en la terminal (recuerda tener el entorno virtual activado)
-
-<br/>
 
 ```shell
  python manage.py makemigrations
  python manage.py migrate
 ```
-
-<br/>

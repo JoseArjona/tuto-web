@@ -9,12 +9,9 @@ heroImageAlt: "Markdown logo"
 
 ## Cabeceras
 
-<br />
-
 Usa las almohadillas (#) para crear los encabezados el número de almohadillas es el nivel del encabezado así hasta el 6
 
 #### Sintaxis
-<br />
 
 ```md
 # Cabecera nivel 1
@@ -29,10 +26,8 @@ Usa las almohadillas (#) para crear los encabezados el número de almohadillas e
 
 ###### Cabecera nivel 6
 ```
-<br />
 
 ## Estilos en Texto
-<br />
 
 Al igual como los encabezados entre más \* agregues cambiara él efecto. Los asteriscos van sin espacio.
 
@@ -43,79 +38,49 @@ Al igual como los encabezados entre más \* agregues cambiara él efecto. Los as
 | `***ambos***` | **_texto en cursiva y negrita_** |
 | `~~tachado~~` | ~~tachado~~                      |
 
-<br />
-
 ## Tablas
 
-<br />
-
 #### Sintaxis
-<br />
-
 
 ```markdown
-| Sintaxis| Descripción| Resultado   |
-| :---        |    :----:   |          ---: | se usa para la alineacion
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
-
+| Sintaxis| Descripción| Resultado |
+| :--- | :----: | ---: | se usa para la alineacion
+| Header | Title | Here's this |
+| Paragraph | Text | And more |
 ```
-<br />
 
 > o Usa el generador de tabla : https://www.tablesgenerator.com/markdown_tables
 
-<br />
-
-## Listas y Bloques 
-<br />
+## Listas y Bloques
 
 ### Bloques de citado
-<br />
 
 #### Sintaxis
-<br /> 
 
 ```md
 para poner bloques de citado se usa > antes de empezar el texto
 ```
-<br />
 
 #### Ejemplo
-<br />
 
 ```md
 > este sería un ejemplo
 > de como debes escribirlo
-
 ```
 
-<br />
-
 #### Resultado
-
-<br />
 
 > este sería un ejemplo
 > de como debes escribirlo
 
-<br />
-
 ### Bloques de codigo
 
-<br />
-
 #### Sintaxis
-<br /> 
 
-para poner bloques de código se usa las tres comillas invertidas simples ``` antes y después  además, se puede especificar el código usando las tres comillas
-y seguido el lenguaje por ejemplo json después cierras  las comillas invertidas y el código
-
-
-<br /> 
+para poner bloques de código se usa las tres comillas invertidas simples ``` antes y después además, se puede especificar el código usando las tres comillas
+y seguido el lenguaje por ejemplo json después cierras las comillas invertidas y el código
 
 #### Ejemplo
-
-<br /> 
 
 ```json
 {
@@ -123,16 +88,11 @@ y seguido el lenguaje por ejemplo json después cierras  las comillas invertidas
   "lastName": "Smith",
   "age": 25
 }
-``` 
-
-<br /> 
-
+```
 
 ### Listas
-<br />
 
 #### Sintaxis
-<br /> 
 
 Para poner listas ordenas simplemente por un numero antes `1.` lista y así.
 Para listas no ordenadas solo pon un `-` lista.
@@ -140,58 +100,51 @@ Para listas dentro de listas solo usa los espacios.
 Y para empezar una lista con numero sin que se ordenen pon \ y el numero
 
 #### Ejemplo
-<br />
 
-```md 
-  - Lista
-  - no
-  - ordenada
+```md
+- Lista
+- no
+- ordenada
 
- 1. Lista
- 2. xd
- 3. ordenada
+1.  Lista
+2.  xd
+3.  ordenada
 
 - primera item
 - segundo item
 - tercera item
-    - Interna
-    - Interna
+  - Interna
+  - Interna
 - cuarto item
-``` 
-
-<br />
+```
 
 #### Resultado
- - Lista 
-  - no
-  - ordenada
 
- 1. Lista 
- 2. xd
- 3. ordenada
+- Lista
+- no
+- ordenada
+
+1.  Lista
+2.  xd
+3.  ordenada
 
 - primera item
 - segundo item
 - tercera item
-    - Interna
-    - Interna
+  - Interna
+  - Interna
 - cuarto item
 
 ### Url
 
-<br />
-Por ultimo para poner un texto una url 
+Por ultimo para poner un texto una url
 
 #### Sintaxis
-<br />
 
 ```md
 [Texto con Url](url)
-``` 
-<br />
+```
 
 #### Ejemplo
-<br />
-
 
 [Mardown Sintaxis completa](https://www.markdownguide.org/basic-syntax/)
