@@ -33,10 +33,9 @@
     input = document.getElementById("searchBox");
     filter = input.value.toUpperCase();
     section = document.getElementById("posts");
-    div = section.getElementsByClassName("card");
-
+    div = section.getElementsByClassName("cards");
     for (i = 0; i < div.length; i++) {
-      h2 = div[i].getElementsByTagName("h2")[0];
+      h2 = div[i].getElementsByTagName("h3")[0];
       if (h2) {
         var palabrasEnFiltro = filter.split(" ");
         var hallado = 0;
@@ -45,12 +44,29 @@
             hallado++;
           }
         }
-
         if (hallado === palabrasEnFiltro.length) {
           div[i].style.display = "";
         } else {
           div[i].style.display = "none";
         }
+        // si todos los div tienen display none, mostrar mensaje
+        let todosOcultos = true;
+
+        for (let allCards of div) {
+          if (allCards.style.display !== "none") {
+            todosOcultos = false;
+          }
+        }
+        const element = Array.from(div);
+        const hiddenDiv = element.filter(
+          (element: { style: { display: string } }) =>
+            element.style.display !== "none"
+        );
+        const totalDiv = hiddenDiv.length;
+        const infoSearch = document.querySelector("#infoSearch");
+        todosOcultos == true
+          ? infoSearch.textContent = "No hay resultados"
+          : infoSearch.textContent = `Mostrando ${totalDiv} de ${div.length} resultados`;
       } else {
         console.log("no hay titulos");
       }

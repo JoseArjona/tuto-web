@@ -18,22 +18,30 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 <MainLayout>
   <BtnUp />
   <section>
-    <div class=" py-6 sm:py-8 lg:py-12">
+    <div class="py-6 sm:py-8 lg:py-12">
       <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
         <!-- text - start -->
         <div class="mb-10 md:mb-16">
-          <h2 class="text-gray-800 dark:text-blue-50 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Blog</h2>
-    
+          <h2
+            class="text-gray-800 dark:text-blue-50 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6"
+          >
+            Blog
+          </h2>
+         
           <div>
             <SearchInput />
           </div>
+           <p class="text-gray-800 dark:text-blue-50 mt-4 text-right" id="infoSearch"></p>
         </div>
-     </div>
+      </div>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-8" id="posts">
+    <div
+      class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-8"
+      id="posts"
+    >
       {
         posts.map((post) => (
-          <div >
+          <div class="cards">
             <Card
               link={post.url}
               title={post.frontmatter.title}
