@@ -42,7 +42,7 @@ Dentro del archivo `settings.py` buscaremos en la sección `DATABASES` pondremos
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nombre_de_tu_base_de_datos',
         'USER': 'usuario_de_la_base_de_datos',
-        'PASSWORD': 'contraseña_de_la_base_de_datos',
+        'PASSWORD': 'contraseña_del_usuario',
         'HOST': 'dirección_del_servidor', # es 'localhost' en desarrollo
         'PORT': 'puerto_del_servidor', # Generalmente es el 5432
     }
