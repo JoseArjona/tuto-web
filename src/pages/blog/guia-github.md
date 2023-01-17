@@ -13,10 +13,34 @@ Seleccionamos la carpeta donde tenemos el proyecto. Damos clic derecho y abrimos
 
 > Nota: en la terminal debes fijarte que estas en la dirección correcta de tu proyecto.
 
-Aplicamos el comando `git init` para inicializar el repositorio.
-Después `git add . `, el punto indica que se agregara todos los archivos.
-Luego `git commit -m "mensaje"` , el mensaje es para identificar el cambio que hicimos.
-Por ultimo `git push -u origin main` , origin es el nombre del repositorio y main es la rama.
+Aplicamos el comando para inicializar el repositorio.
+```bash
+  git init
+```
+ 
+Después
+```bash
+ git add .
+```
+el punto indica que se agregara todos los archivos.
+
+Luego 
+```bash
+ git commit -m "first commit"
+```
+el mensaje es para identificar el cambio que hicimos. Posteriormente cambiamos la rama del proyecto (recomendacion de github)
+```bash
+ git branch -M main
+```
+Por ultimo 
+```bash
+ git remote add origin + elUrldelRepositorio
+``` 
+y
+```bash
+ git push -u origin main
+``` 
+origin es el nombre del repositorio y main es la rama.
 
 ## Clonar un proyecto de GitHub
 
